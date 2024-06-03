@@ -1,0 +1,614 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavTabs Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style type="text/css">
+
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navtabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 10px 20px;
+  position: relative;
+}
+.navtab {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s;
+}
+.navtab:hover {
+  color: #007BFF;
+}
+.navtab.active {
+  color: #007BFF;
+  font-weight: 600;
+}
+.underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: #007BFF;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+.content {
+  display: none;
+  padding: 100px 20px 20px;
+  max-width: 800px;
+  text-align: center;
+}
+.content.active {
+  display: block;
+}
+.footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 14px;
+  color: #000;
+  transition: color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer a {
+  background: linear-gradient(145deg, #007aff, #005bb5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.footer a:hover {
+  color: linear-gradient(145deg, #007aff, #005bb5);
+}
+ .round-color-input {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            padding: 0;
+            border: none;
+        }
+        /* all */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+
+
+/* container and form */
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  left: 0;
+  bottom: 0;
+}
+
+.container form .user__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+/* inside the form user details */
+form .user__details .input__box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+}
+
+.user__details .input__box .details {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+.user__details .input__box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid var(--main-grey);
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user__details .input__box input:focus,
+.user__details .input__box input:valid {
+  border-color: var(--main-purple);
+}
+
+/* inside the form gender details */
+
+form .gender__details .gender__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+form .gender__details .category {
+  display: flex;
+  width: 80%;
+  margin: 15px 0;
+  justify-content: space-between;
+}
+
+.gender__details .category label {
+  display: flex;
+  align-items: center;
+}
+
+.gender__details .category .dot {
+  height: 18px;
+  width: 18px;
+  background: var(--sub-grey);
+  border-radius: 50%;
+  margin: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three {
+  border-color: var(--sub-grey);
+  background: var(--main-purple);
+}
+
+form input[type="radio"] {
+  display: none;
+}
+
+/* submit button */
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background:  #007BFF;
+  transition: all 0.3s ease;
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+}
+
+@media only screen and (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+
+  form .user__details .input__box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  form .gender__details .category {
+    width: 100%;
+  }
+
+  .container form .user__details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user__details::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+
+    <div class="navtabs">
+      <div class="navtab active" data-target="home">Home</div>
+      <div class="navtab" data-target="about">ADD TASK</div>
+      <div class="navtab" data-target="contact">VIEW TASKS</div>
+      <form id="logout-form" action="{% url 'todoapp:todo_logout' %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary" value="LOGOUT" style="background-color: #007BFF;color: white;border: none;">
+</form>
+      
+     <!--  <div class="navtab" data-target="page5">Page5</div>
+      <div class="navtab" data-target="page6">Page6</div>
+      <div class="navtab" data-target="page7">Page7</div> -->
+      <div class="underline"></div>
+    </div>
+
+    <div id="home" class="content active">
+    
+      {% if not user_todo %}
+      <h1>Welcome to the Home Page</h1>
+      <img src="/static/notodo.png">
+        <h1>No added tasks today?</h1>
+        <button class="navtab" style="background-color: #007BFF;color: white;width:130px;height:55px;border: none;" data-target="about">ADD NEW TASK</button>
+      {% else %}
+     <div class="row">
+      <div class="col-sm-6">
+         <h1>Today's Task</h1>
+      </div>
+        <div class="col-sm-6">
+            <button class="navtab" style="background-color: #007BFF;color: white;border: none;" data-target="about">ADD NEW TASK</button>
+            <br>
+      </div>
+     </div>
+       <table class="table mt-5" style="width:600px;">
+  <thead class="thead-dark" style="background-color:red;">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Task Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+        <th scope="col">Edit</th>
+         <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for i in user_todo %}
+    <tr>
+     
+      <th scope="row">1</th>
+      <td>{{i.taskname}}</td>
+      <td>{{i.description}}</td>
+      <td>{{i.status}}</td>
+        <td>
+           <a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" class="view-details" data-id="{{ i.id }}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" id="edit">
+        <path fill="#000" d="M17.864 3.6a1 1 0 0 0-1.414 0l-1.414 1.415 4.242 4.242 1.414-1.414a1 1 0 0 0 0-1.414L17.864 3.6zm0 7.072-4.243-4.243-8.9 8.9a1 1 0 0 0-.292.706v2.829a1 1 0 0 0 1 1h2.828a1 1 0 0 0 .707-.293l8.9-8.9z"></path>
+    </svg>
+</a>
+
+</td>
+
+       <td><input type="checkbox" class="delete-checkbox" value="{{i.id}}" name="" >                  
+       </td>
+
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+        {% endif %}
+    </div>
+    <div id="about" class="content">
+      <div class="container">
+  <div class="title">ADD NEW TASK</div>
+  <form action="{% url 'todoapp:todoinsert' %}" method="POST">
+      {% csrf_token %}
+
+    <div class="user__details">
+      <div class="input__box">
+        <input type="text" placeholder="Task Name" required name="taskName">
+      </div>
+      <div class="input__box">
+        <input type="date" required name="dateinput1">
+      </div>
+       <div class="input__box">
+        <input type="color" required name="color">
+      </div>
+      <div class="input__box">
+        <textarea class="form-control" name="description"></textarea>
+      </div>
+     
+
+    </div>
+    <div class="button">
+      <input  type="submit" value="ADD">
+    </div>
+  </form>
+</div>
+    </div>
+    <div id="contact" class="content">
+      <div class="row">
+        <div class="col-sm-6">
+         <form id="statusForm" action="{% url 'todoapp:viewtodo' %}" method="POST">
+        {% csrf_token %}
+        <select name="status" class="form-control">
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+        </select>
+      
+      </div>
+      <div class="col-sm-6">  <button type="submit" class="btn btn-primary">Submit</button>
+    </form></div>
+    </div>
+     <table id="todoTable" class="table mt-5" style="width:600px;">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+    </div>
+    <div id="page4" class="content">
+      <h1>Page 4</h1>
+      <p>This is the page 4 section.</p>
+    </div>
+    <div id="page5" class="content">
+      <h1>Page 5</h1>
+      <p>This is the page 5 section.</p>
+    </div>
+    <div id="page6" class="content">
+      <h1>Page 6</h1>
+      <p>This is the page 6 section.</p>
+    </div>
+    <div id="page7" class="content">
+      <h1>Page 7</h1>
+      <p>This is the page 7 section.</p>
+    </div>
+
+    <div class="footer">
+      Made by <a href="http://example.com">Zyrkof</a>
+    </div>
+    <script type="text/javascript">
+      const tabs = document.querySelectorAll('.navtab');
+const contents = document.querySelectorAll('.content');
+const underline = document.querySelector('.underline');
+
+function updateUnderline() {
+  const activeTab = document.querySelector('.navtab.active');
+  underline.style.width = `${activeTab.offsetWidth}px`;
+  underline.style.left = `${activeTab.offsetLeft}px`;
+}
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const target = tab.getAttribute('data-target');
+    contents.forEach(content => {
+      if (content.id === target) {
+        content.classList.add('active');
+      } else {
+        content.classList.remove('active');
+      }
+    });
+    updateUnderline();
+  });
+});
+
+window.addEventListener('resize', updateUnderline);
+updateUnderline();
+    </script>
+     <script>
+        $(document).ready(function() {
+            // Handle form submission for filtering tasks
+            $('#statusForm').on('submit', function(event) {
+                event.preventDefault(); // Prevent the form from submitting via the browser
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: $(this).attr('method'),
+                    data: $(this).serialize(),
+                    success: function(data) {
+                        console.log('Success:', data); // Debug print
+                        $('#todoTable tbody').empty(); // Clear the table body
+                        if (data.length > 0) {
+                            $.each(data, function(index, todo) {
+                                $('#todoTable tbody').append(
+                                    '<tr>' +
+                                    '<th scope="row">' + (index + 1) + '</th>' +
+                                    '<td>' + todo.taskName + '</td>' +
+                                    '<td>' + todo.description + '</td>' +
+                                    '<td>' + todo.status + '</td>' +
+                                    '</tr>'
+                                );
+                            });
+                        } else {
+                            $('#todoTable tbody').append('<tr><td colspan="5">No tasks to display.</td></tr>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error:', status, error); // Debug print
+                    }
+                });
+            });
+
+$(document).ready(function() {
+    $(document).on('change', '.delete-checkbox', function() {
+        if ($(this).is(':checked')) {
+            var todoId = $(this).val();
+            $.ajax({
+                url: "{% url 'todoapp:todo_delete' %}",
+                type: 'POST',
+                data: {
+                    'todo_id': todoId,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        location.reload();  // Refresh the page
+                    } else if (response.status === 'error' && response.message === 'Session expired. Please log in again.') {
+                        window.location.href = "/login/";
+                    } else {
+                        alert('Error: ' + response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert('Error: ' + error);
+                }
+            });
+        }
+    });
+});
+        });
+    </script>
+     <script type="text/javascript">
+    $(document).ready(function() {
+    // Handle clicking the "View Details" button
+    $(document).on('click', '.view-details', function() {
+        var todoId = $(this).data('id');
+        $.ajax({
+            url: "{% url 'todoapp:todo_view' %}",
+            type: 'POST',
+            data: {
+                'todo_id': todoId,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(data) {
+                console.log(data); // Debugging line to check the received data
+                if (data.length > 0) {
+                  $('#editTodoTitle').val(data[0].taskname);
+                        $('#editTodoDate').val(data[0].date );
+                        $('#editTodoDescription').val( data[0].description);
+                          $('#editTodoId').val( data[0].id);
+                           $('.modal-content').css('background-color', data[0].color);
+                      
+                } else {
+                    $('#exampleModal .modal-body').html('<p>No data found.</p>');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('AJAX Error:', status, error);
+            }
+        });
+    });
+});
+
+    </script>
+
+    <script type="text/javascript"></script>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Task</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="editTodoForm" action="{% url 'todoapp:todo_update' %}" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-6">
+                <label for="editTodoTitle" class="col-form-label">Task Name:</label>
+                <input type="text" class="form-control" id="editTodoTitle" name="taskname">
+                <input type="text" class="form-control" id="editTodoId" name="id" hidden>
+              </div>
+              <div class="col-sm-6">
+                <label for="editTodoDate" class="col-form-label">Date:</label>
+                <input type="date" class="form-control" id="editTodoDate" name="date">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <label for="editTodoDescription" class="col-form-label">Description:</label>
+                <textarea class="form-control" id="editTodoDescription" name="description"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="button" class="btn btn-primary" onclick="$('#editTodoForm').submit();" value="Update">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // Handle edit button click
+        $(document).on('click', '.edit-icon', function() {
+            var todoId = $(this).data('id'); // Use value attribute to get the ID
+            alert(todoId);  // Show the todo ID in an alert box for testing
+            $.ajax({
+                url: "{% url 'todoapp:todo_view' %}",
+                type: 'POST',
+                data: {
+                    'todo_id': todoId,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    // Directly access the response as todo_data
+                    alert(JSON.stringify(response));
+                   // Show the response for testing
+                    $('#editTodoTitle').val(response.taskname);
+                    $('#editTodoDate').val(response.date);
+                    $('#editTodoDescription').val(response.description);
+                    
+                  
+                    // Show the modal
+                },
+                error: function(xhr, status, error) {
+                    alert('Error: ' + error);
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+  </body>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</html>
